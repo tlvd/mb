@@ -52,6 +52,7 @@ export default defineNuxtConfig({
   },
 
   fonts: {
+    provider: 'local',
     families: [
       { name: 'Noto Sans Hebrew', weights: [400, 700], global: true },
     ],

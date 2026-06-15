@@ -14,6 +14,20 @@ const { data: inquiries } = await useAsyncData(route.path, () => {
     .all()
 })
 
+const title = 'פניות התושבים'
+const description = 'מאגר הפניות שלכם. כאן תוכלו לצפות בכל הפניות שהוגשו ולעקוב אחר התקדמות הטיפול בפניה.'
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
+})
+
+const headline = 'ראשי'
+
+defineOgImage('Docs.takumi', { title, description, headline })
+
 // Sort inquiries by date (newest first) if idate exists
 const sortedInquiries = computed(() => {
   if (!inquiries.value?.length) return []

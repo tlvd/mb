@@ -15,6 +15,20 @@ const { data: servants } = await useAsyncData(route.path, () => {
     .all()
 })
 
+const title = 'המשרתים שלנו'
+const description = 'הכירו את משרתי העם.'
+
+useSeoMeta({
+  title,
+  ogTitle: title,
+  description,
+  ogDescription: description
+})
+
+const headline = 'ראשי'
+
+defineOgImage('Docs.takumi', { title, description, headline })
+
 // Sort servants by title/name alphabetically
 // const sortedServants = computed(() => {
 //   if (!servants.value?.length) return []
