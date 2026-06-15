@@ -18,7 +18,7 @@ export default defineAppConfig({
     colors: {
       neutral: 'slate',
       primary: 'emerald',
-      secondary: 'indigo',
+      secondary: 'indigo'
     },
     footer: {
       slots: {
@@ -52,16 +52,16 @@ export default defineAppConfig({
         slots: {
           externalIcon: [
             // '--left-2 --right-auto --scale-x-[-1]',
-            'hidden',
+            'hidden'
           ]
-        },
+        }
       },
-      td :{
+      td: {
         defaultVariants: {
           align: 'right'
         }
       },
-      th :{
+      th: {
         defaultVariants: {
           align: 'right'
         }
@@ -78,10 +78,10 @@ export default defineAppConfig({
         to: {
           true: {
             avatar: 'group-hover/user:scale-none group-has-focus-visible/user:scale-none'
-          },
+          }
         }
       }
-    } 
+    }
   },
   seo: {
     siteName: 'משרתים בע"מ'
@@ -95,7 +95,7 @@ export default defineAppConfig({
       dark: ''
     },
     search: true,
-    colorMode: true,
+    colorMode: true
     // links: [{
     //   'icon': 'i-simple-icons-github',
     //   'to': 'https://github.com/nuxt-ui-templates/docs',
