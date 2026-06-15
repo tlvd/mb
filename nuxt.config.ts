@@ -1,5 +1,22 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  app: {
+    baseURL: '/mb/',
+    // baseURL: process.env.NODE_ENV === 'production' 
+    //   ? '/mb/'  // Replace with your repository name
+    //   : '/',
+    head: {
+      title: 'משרתים בע"מ', // default fallback title
+      htmlAttrs: {
+        lang: 'he',
+        dir: 'rtl'
+      },
+      // link: [
+      //   { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      // ],
+    },
+  },
+
   modules: [
     '@nuxt/eslint',
     '@nuxt/image',
@@ -7,7 +24,7 @@ export default defineNuxtConfig({
     '@nuxt/content',
     'nuxt-og-image',
     'nuxt-llms',
-    '@nuxtjs/mcp-toolkit'
+    // '@nuxtjs/mcp-toolkit'
   ],
 
   devtools: {
@@ -35,16 +52,6 @@ export default defineNuxtConfig({
 
   compatibilityDate: '2024-07-11',
 
-  nitro: {
-    prerender: {
-      routes: [
-        '/'
-      ],
-      crawlLinks: true,
-      autoSubfolderIndex: false
-    }
-  },
-
   eslint: {
     config: {
       stylistic: {
@@ -54,39 +61,41 @@ export default defineNuxtConfig({
     }
   },
 
+  nitro: {
+    preset: 'static',
+    serveStatic: true,
+    prerender: {
+      routes: [
+        '/'
+      ],
+      crawlLinks: true,
+      autoSubfolderIndex: false
+    }
+  },
+
+  ssr: true,
+
   icon: {
-    provider: 'iconify'
+    provider: 'iconify',
+    customCollections: [{
+      prefix: 'local',
+      dir: './app/assets/icons'
+    }]
   },
 
   llms: {
-    domain: 'https://docs-template.nuxt.dev/',
-    title: 'Nuxt Docs Template',
-    description: 'A template for building documentation with Nuxt UI and Nuxt Content.',
+    domain: 'https://meshartim.co.il/',
+    title: 'משרתים בע"מ',
+    description: 'תושבים למען שקיפות ואחריות בשירות הציבורי. תיעוד, שיתוף ופנייה מסודרת מול עיריות, משטרה ומשרדי ממשלה.',
     full: {
-      title: 'Nuxt Docs Template - Full Documentation',
-      description: 'This is the full documentation for the Nuxt Docs Template.'
-    },
-    sections: [
-      {
-        title: 'Getting Started',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/getting-started%' }
-        ]
-      },
-      {
-        title: 'Essentials',
-        contentCollection: 'docs',
-        contentFilters: [
-          { field: 'path', operator: 'LIKE', value: '/essentials%' }
-        ]
-      }
-    ]
+      title: 'משרתים בע"מ – תיעוד, שקיפות, אחריות',
+      description: 'מיזם אזרחי מבוסס קוד פתוח לקידום שקיפות ולקיחת אחריות בשירות הציבורי בישראל. תיעודים, דיונים, פניות רשמיות והישגים לפי ערים.'
+    }
   },
 
-  mcp: {
-    name: 'Docs template'
-  },
+  // mcp: {
+  //   name: 'Docs template'
+  // },
 
   ogImage: {
     zeroRuntime: true

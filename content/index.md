@@ -1,261 +1,154 @@
 ---
 seo:
-  title: Nuxt Docs Template
-  description: Create stunning, fast and SEO-optimized documentation sites with Nuxt UI.
+  title: משרתים בע"מ
+  description:  תושבים למען צדק, הוגנות, שקיפות ואחריות בשירות הציבורי
 ---
 
-::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-950"}
+::u-page-hero{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-900 max-w-4xl mx-auto -mt-12"}
 ---
-orientation: horizontal
+orientation: vertical
 ---
 #top
-:hero-background
+<!-- :hero-background -->
 
 #title
-Ship Beautiful [Documentation]{.text-primary}.
+[עובדים שלנו,]{.text-primary}  
+לא אנחנו שלהם
+<!-- [עובדים בשבילנו,]{.text-primary}  
+(לא אנחנו בשבילם) -->
+<!-- תושבים למען [שקיפות ולקיחת אחריות]{.text-primary}. -->
 
 #description
-Build professional documentation with Nuxt UI's powerful components, enhanced typography, and seamless Nuxt Content integration. The same system trusted by the entire [Nuxt ecosystem](https://nuxt.com).
+עובדי ציבור מוסמכים לשרת, לא להשפיל, להתעלם, להפלות או לשלול זכויות. האתר והקהילה הזו נועדו לקדם שקיפות, לקיחת אחריות, לתגמל מצוינות ולתקן התנהלות פסולה באמצעות תיעוד חוקי, פנייה מסודרת ולחץ קהילתי מבוקר.
 
 #links
   :::u-button
   ---
-  to: /getting-started
+  to: /inquiries
   size: xl
-  trailing-icon: i-lucide-arrow-right
+  icon: i-lucide-zap
   ---
-  Get started
+  **עיינו בפניות קיימות**
   :::
 
   :::u-button
   ---
-  icon: i-simple-icons-github
+  trailing-icon: i-local-telegram
   color: neutral
-  variant: outline
+  variant: subtle
   size: xl
-  to: https://github.com/nuxt-ui-templates/docs
-  target: _blank
+  to: info/about#הצטרפו-אלינו
   ---
-  Use this template
+  הצטרפו לקבוצת הדיונים
   :::
-
-#default
-  :::prose-pre
-  ---
-  code: |
-    export default defineNuxtConfig({
-      modules: [
-        '@nuxt/ui',
-        '@nuxt/content',
-        'nuxt-og-image',
-        'nuxt-llms'
-      ],
-
-      css: ['~/assets/css/main.css']
-    })
-  filename: nuxt.config.ts
-  ---
-
-  ```ts [nuxt.config.ts]
-  export default defineNuxtConfig({
-    modules: [
-      '@nuxt/ui',
-      '@nuxt/content',
-      'nuxt-og-image',
-      'nuxt-llms'
-    ],
-
-    css: ['~/assets/css/main.css']
-  })
-  ```
-  :::
+<!-- end u-page-hero -->
 ::
 
-::u-page-section{class="dark:bg-neutral-950"}
-#title
-Powered by Nuxt UI components
+:::marquees
+:::
+
+::u-page-section{class="dark:bg-neutral-900 max-w-6xl mx-auto"}
+---
+headline: למה כדאי להצטרף?
+title: ביחד משנים את השירות הציבורי
+description: גם אתם יכולים להיות חלק מהפתרון. הנה כמה סיבות טובות להצטרף לקבוצת הדיון ולייצר פניות באתר.
+---
 
 #links
   :::u-button
   ---
-  color: neutral
+  color: primary
   size: lg
-  target: _blank
-  to: https://ui.nuxt.com/docs/getting-started/installation/nuxt
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
+  to: info/advantages
+  trailingIcon: i-lucide-arrow-left
+  variant: solid
   ---
-  Explore Nuxt UI
+  יתרונות נוספים
   :::
 
 #features
   :::u-page-feature
   ---
-  icon: i-lucide-palette
+  icon: i-lucide-message-square-more
   ---
   #title
-  100+ UI Components
+  קהילה פעילה ותומכת
 
   #description
-  Access the complete Nuxt UI component library. From badges to modals, everything styled and accessible out of the box.
+  לא לבד. בקבוצה תמצאו תושבים עם חוויות דומות, עצות מעשיות, ותמיכה לאורך התהליך.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-type
+  icon: i-lucide-scale
   ---
   #title
-  Beautiful Typography
+  תיעוד מסודר זה כוח אמיתי
 
   #description
-  Pre-styled prose components with perfect visual harmony. No need for @tailwindcss/typography - get precise control over every element.
+  פנייה מובנית עם תיעוד, תאריכים והפנייה לגורם רשמי – מעלה משמעותית את סיכויי הטיפול וההתייחסות.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-layers
+  icon: i-lucide-folder-open
   ---
   #title
-  Rich Prose Components
+  תיק פניות אישי ומאורגן
 
   #description
-  Accordions, cards, callouts, tabs, steps, code blocks, and more - all provided by Nuxt UI for interactive documentation.
+  כל פנייה שאתם יוצרים נשמרת, מתועדת וניתנת לשיתוף. קישור אחד – ושלחתם מסמך מסודר לגורם הרשמי.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-search
+  icon: i-lucide-trophy
   ---
   #title
-  Built-in Search
+  הישגים שנראים
 
   #description
-  Full-text search with ContentSearch component. No need for Algolia - instant, relevant results with keyboard shortcuts (⌘K).
+  כל פנייה שטופלה, כל התנצלות שהתקבלה, כל עובד שקיבל פרגון – מתועד ונראה לכולם.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-navigation
+  icon: i-lucide-eye
   ---
   #title
-  Smart Navigation
+  שקיפות דו-סטרית
 
   #description
-  Auto-generated navigation with ContentNavigation and ContentToc components. Sticky table of contents and prev/next links.
+  גם עובדי ציבור יכולים להגיב, להבהיר, ולקבל הכרה על עבודה טובה. כולם רואים את כולם.
   :::
 
   :::u-page-feature
   ---
-  icon: i-lucide-moon
+  icon: i-lucide-users
   ---
   #title
-  Dark Mode Ready
+  אתם מפעילים את המערכת
 
   #description
-  Automatic theme switching with smooth transitions. Respects system preferences and remembers user choice.
+  קוד פתוח, שקיפות מלאה, והחלטות מתקבלות יחד. המיזם הזה שייך לקהילה – לא לגורם מרכזי אחד.
   :::
 ::
 
-::u-page-section{class="dark:bg-neutral-950"}
-#title
-Enhanced with Nuxt Content
-
-#links
-  :::u-button
-  ---
-  color: neutral
-  size: lg
-  target: _blank
-  to: https://content.nuxt.com/docs/getting-started/installation
-  trailingIcon: i-lucide-arrow-right
-  variant: subtle
-  ---
-  Explore Nuxt Content
-  :::
-
-#features
-  :::u-page-feature
-  ---
-  icon: i-simple-icons-markdown
-  ---
-  #title
-  MDC Enhanced Markdown
-
-  #description
-  Write in Markdown while embedding Vue components. Seamlessly integrate interactive elements in your content.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-file-text
-  ---
-  #title
-  File-based Routing
-
-  #description
-  Organize content in folders and files. Your documentation structure automatically becomes your navigation.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-code
-  ---
-  #title
-  Syntax Highlighting
-
-  #description
-  Beautiful code blocks with language detection, line numbers, and copy buttons. Support for 100+ languages.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-database
-  ---
-  #title
-  Content Database
-
-  #description
-  Query your content with a MongoDB-like API. Filter, sort, and search through your documentation programmatically.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-file-code
-  ---
-  #title
-  Frontmatter Support
-
-  #description
-  Add metadata to your content files. Define SEO tags, navigation properties, and custom fields.
-  :::
-
-  :::u-page-feature
-  ---
-  icon: i-lucide-git-branch
-  ---
-  #title
-  Version Control
-
-  #description
-  Content lives in your repository. Branch, review, and deploy documentation alongside your code.
-  :::
-::
-
-::u-page-section{class="dark:bg-gradient-to-b from-neutral-950 to-neutral-900"}
+::u-page-section{class="dark:bg-gradient-to-b from-neutral-900 to-neutral-900"}
   :::u-page-c-t-a
   ---
   links:
-    - label: Start building
-      to: '/getting-started'
-      trailingIcon: i-lucide-arrow-right
-    - label: View on GitHub
-      to: 'https://github.com/nuxt-ui-templates/docs'
+    - label: יוצרים פנייה חדשה
+      to: 'info/share'
+      trailingIcon: i-lucide-pen-line
+    - label: הקוד פתוח ב-GitHub
+      to: 'https://github.com/your-username/meshartim-bam'
       target: _blank
       variant: subtle
       icon: i-simple-icons-github
-  title: Ready to build an amazing documentation?
-  description: Join thousands of developers building with Nuxt and Nuxt UI. Get this template and start shipping today.
-  class: dark:bg-neutral-950
+  title: מוכנים לפעול?
+  description: בואו נתקן את השירות הציבורי ביחד. יוצרים פנייה מסודרת, מתעדים, פונים לגורם הרשמי – והופכים חלק מקהילה של תושבים דורשים שקיפות ואחריות.
+  class: dark:bg-neutral-900
   ---
 
   :stars-bg

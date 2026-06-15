@@ -8,7 +8,7 @@ const { header } = useAppConfig()
 
 <template>
   <UHeader
-    :ui="{ center: 'flex-1' }"
+    :ui="{ root: '--border-0 --dark:bg-neutral-950/70', center: 'flex-1' }"
     :to="header?.to || '/'"
   >
     <UContentSearchButton
@@ -38,11 +38,21 @@ const { header } = useAppConfig()
       v-else
       #left
     >
-      <NuxtLink :to="header?.to || '/'">
-        <AppLogo class="w-auto h-6 shrink-0" />
+      <NuxtLink
+        :to="header?.to || '/'"
+        class="flex items-center gap-4 print:hidden"
+      >
+        <!-- <AppLogo class="w-auto h-7 shrink-0 text-teal-600 dark:text-teal-500 -mt-1.5" /> -->
+        <UButton
+          icon="i-lucide-zap"
+          size="xl"
+          color="primary"
+          variant="solid"
+        />
+        <AppLogo class="w-auto h-5 shrink-0 text-black dark:text-white" />
       </NuxtLink>
 
-      <TemplateMenu />
+      <!-- <TemplateMenu /> -->
     </template>
 
     <template #right>
@@ -53,13 +63,13 @@ const { header } = useAppConfig()
 
       <UColorModeButton v-if="header?.colorMode" />
 
-      <template v-if="header?.links">
+      <!-- <template v-if="header?.links">
         <UButton
           v-for="(link, index) of header.links"
           :key="index"
           v-bind="{ color: 'neutral', variant: 'ghost', ...link }"
         />
-      </template>
+      </template> -->
     </template>
 
     <template #body>

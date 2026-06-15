@@ -6,38 +6,38 @@ const toast = useToast()
 const { copy, copied } = useClipboard()
 const site = useSiteConfig()
 
-const mdPath = computed(() => `${site.url}/raw${route.path}.md`)
+const mdPath = computed(() => `${site.url}raw${route.path}.md`)
 
 const items = [
   {
-    label: 'Copy Markdown link',
+    label: 'העתק קישור לכיתוב',
     icon: 'i-lucide-link',
     onSelect() {
       copy(mdPath.value)
       toast.add({
-        title: 'Copied to clipboard',
+        title: 'הקישור הועתק',
         icon: 'i-lucide-check-circle'
       })
     }
   },
   {
-    label: 'View as Markdown',
+    label: 'הצג כיתוב',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
     to: `/raw${route.path}.md`
-  },
-  {
-    label: 'Open in ChatGPT',
-    icon: 'i-simple-icons:openai',
-    target: '_blank',
-    to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`
-  },
-  {
-    label: 'Open in Claude',
-    icon: 'i-simple-icons:anthropic',
-    target: '_blank',
-    to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`
   }
+  // {
+  //   label: 'Open in ChatGPT',
+  //   icon: 'i-simple-icons:openai',
+  //   target: '_blank',
+  //   to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`
+  // },
+  // {
+  //   label: 'Open in Claude',
+  //   icon: 'i-simple-icons:anthropic',
+  //   target: '_blank',
+  //   to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`
+  // }
 ]
 
 async function copyPage() {
@@ -48,9 +48,10 @@ async function copyPage() {
 <template>
   <UFieldGroup>
     <UButton
-      label="Copy page"
+      label="העתק מידע"
       :icon="copied ? 'i-lucide-copy-check' : 'i-lucide-copy'"
       color="neutral"
+      size="sm"
       variant="outline"
       :ui="{
         leadingIcon: [copied ? 'text-primary' : 'text-neutral', 'size-3.5']
@@ -65,7 +66,7 @@ async function copyPage() {
         sideOffset: 8
       }"
       :ui="{
-        content: 'w-48'
+        content: '--w-48'
       }"
     >
       <UButton

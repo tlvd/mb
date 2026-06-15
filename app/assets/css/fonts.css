@@ -1,0 +1,19 @@
+
+@font-face {
+  font-family: "Noto Sans Hebrew", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 100 900; /* Make sure this matches your font's actual range */
+  font-display: swap;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+  src: url('~/assets/fonts/NotoSansHebrew.woff') format('woff');
+}
+
+@font-face {
+  font-family: "Assistant", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 200 800; /* Make sure this matches your font's actual range */
+  font-display: swap;
+  font-style: normal;
+  src: url('~/assets/fonts/Assistant.woff') format('woff');
+}
