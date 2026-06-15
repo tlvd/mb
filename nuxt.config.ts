@@ -16,23 +16,9 @@ export default defineNuxtConfig({
       // ],
     },
   },
-
-  modules: [
-    '@nuxt/eslint',
-    '@nuxt/image',
-    '@nuxt/ui',
-    '@nuxt/content',
-    'nuxt-og-image',
-    'nuxt-llms',
-    // '@nuxtjs/mcp-toolkit'
-  ],
-
-  devtools: {
-    enabled: true
-  },
-
-  css: ['~/assets/css/main.css'],
-
+  
+  compatibilityDate: '2024-07-11',
+  
   content: {
     build: {
       markdown: {
@@ -46,12 +32,16 @@ export default defineNuxtConfig({
     }
   },
 
+  css: ['~/assets/css/main.css'],
+  
+  devtools: {
+    enabled: true
+  },
+  
   experimental: {
     asyncContext: true
   },
-
-  compatibilityDate: '2024-07-11',
-
+  
   eslint: {
     config: {
       stylistic: {
@@ -61,20 +51,12 @@ export default defineNuxtConfig({
     }
   },
 
-  nitro: {
-    preset: 'static',
-    serveStatic: true,
-    prerender: {
-      routes: [
-        '/'
-      ],
-      crawlLinks: true,
-      autoSubfolderIndex: false
-    }
+  fonts: {
+    families: [
+      { name: 'Noto Sans Hebrew', weights: [400, 700], global: true },
+    ],
   },
-
-  ssr: true,
-
+  
   icon: {
     provider: 'iconify',
     customCollections: [{
@@ -93,13 +75,34 @@ export default defineNuxtConfig({
     }
   },
 
-  // mcp: {
-  //   name: 'Docs template'
-  // },
-
+  modules: [
+      '@nuxt/eslint',
+      '@nuxt/image',
+      '@nuxt/ui',
+      '@nuxt/content',
+      'nuxt-og-image',
+      'nuxt-llms',
+      '@nuxt/fonts'
+      // '@nuxtjs/mcp-toolkit'
+    ],
+  
+  nitro: {
+    preset: 'static',
+    serveStatic: true,
+    prerender: {
+      routes: [
+        '/'
+      ],
+      crawlLinks: true,
+      autoSubfolderIndex: false
+    }
+  },
+  
   ogImage: {
     zeroRuntime: true,
   },
+
+  ssr: true,
 
   vite: {
     optimizeDeps: {
