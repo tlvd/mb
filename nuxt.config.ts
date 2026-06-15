@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   app: {
-    baseURL: '/mb/',
+    // baseURL: '/mb/',
     // baseURL: process.env.NODE_ENV === 'production' 
     //   ? '/mb/'  // Replace with your repository name
     //   : '/',
@@ -98,7 +98,7 @@ export default defineNuxtConfig({
   // },
 
   ogImage: {
-    zeroRuntime: true
+    zeroRuntime: true,
   },
 
   vite: {

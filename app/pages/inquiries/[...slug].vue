@@ -33,9 +33,7 @@ useSeoMeta({
 
 const headline = inquiry.value.office ? inquiry.value.office : computed(() => findPageHeadline(navigation?.value, inquiry.value?.path))
 
-defineOgImageComponent('Docs', {
-  headline: headline
-})
+defineOgImage('Docs', { title, description, headline: headline })
 
 const links = computed(() => {
   const links = []
