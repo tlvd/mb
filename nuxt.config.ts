@@ -103,6 +103,10 @@ export default defineNuxtConfig({
     zeroRuntime: true,
   },
 
+  // site: {
+  //   url: 'https://github.com/tlvd/mb'
+  // },
+
   ssr: true,
 
   vite: {

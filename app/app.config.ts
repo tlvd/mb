@@ -110,7 +110,7 @@ export default defineAppConfig({
     icons: [
       {
         'icon': 'i-simple-icons-github',
-        'to': 'https://github.com/nuxt/ui',
+        'to': 'https://tlvd.github.io/mb/',
         'target': '_blank',
         'aria-label': 'משרתים בע"מ בגיטהב'
       },
@@ -136,11 +136,11 @@ export default defineAppConfig({
     title: 'תוכן דף',
     bottom: {
       title: 'קהילה',
-      edit: '#',
+      edit: 'https://github.com/tlvd/mb/edit/main/content/',
       links: [{
         icon: 'i-lucide-star',
         label: 'סמן כוכב',
-        to: '#',
+        to: 'https://github.com/tlvd/mb',
         target: '_blank'
       }, {
         icon: 'i-lucide-message-circle',
