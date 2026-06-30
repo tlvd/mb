@@ -24,7 +24,7 @@ const items = [
     label: 'הצג כיתוב',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
-    to: `${site.url}mb/raw${route.path}.md`
+    to: `/mb/raw${route.path}.md`
   }
   // {
   //   label: 'Open in ChatGPT',
