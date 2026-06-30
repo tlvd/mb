@@ -56,6 +56,11 @@ export default defineAppConfig({
           ]
         }
       },
+      collapsible: {
+        slots: {
+          trigger: 'text-base text-primary'
+        }
+      },
       td: {
         defaultVariants: {
           align: 'right'
