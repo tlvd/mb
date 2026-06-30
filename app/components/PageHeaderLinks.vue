@@ -6,7 +6,7 @@ const toast = useToast()
 const { copy, copied } = useClipboard()
 const site = useSiteConfig()
 
-const mdPath = computed(() => `${site.url}raw${route.path}.md`)
+const mdPath = computed(() => `${site.url}mb/raw${route.path}.md`)
 
 const items = [
   {
@@ -24,7 +24,7 @@ const items = [
     label: 'הצג כיתוב',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
-    to: `/raw${route.path}.md`
+    to: `${site.url}mb/raw${route.path}.md`
   }
   // {
   //   label: 'Open in ChatGPT',
@@ -41,7 +41,7 @@ const items = [
 ]
 
 async function copyPage() {
-  copy(await $fetch<string>(`/raw${route.path}.md`))
+  copy(await $fetch<string>(`/mb/raw${route.path}.md`))
 }
 </script>
 
