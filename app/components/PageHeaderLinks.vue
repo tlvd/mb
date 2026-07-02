@@ -4,16 +4,16 @@ import { useClipboard } from '@vueuse/core'
 const route = useRoute()
 const toast = useToast()
 const { copy, copied } = useClipboard()
-const site = useSiteConfig()
 
-const mdPath = computed(() => `${site.url}mb/raw${route.path}.md`)
+const mdPath = `/mb/raw${route.path}.md`
 
 const items = [
   {
     label: 'העתק קישור לכיתוב',
     icon: 'i-lucide-link',
     onSelect() {
-      copy(mdPath.value)
+      const fullUrl = import.meta.client ? window.location.origin + mdPath : mdPath
+      copy(fullUrl)
       toast.add({
         title: 'הקישור הועתק',
         icon: 'i-lucide-check-circle'
@@ -24,24 +24,25 @@ const items = [
     label: 'הצג כיתוב',
     icon: 'i-simple-icons:markdown',
     target: '_blank',
-    to: `/mb/raw${route.path}.md`
+    to: mdPath
   }
-  // {
-  //   label: 'Open in ChatGPT',
-  //   icon: 'i-simple-icons:openai',
-  //   target: '_blank',
-  //   to: `https://chatgpt.com/?hints=search&q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`
-  // },
-  // {
-  //   label: 'Open in Claude',
-  //   icon: 'i-simple-icons:anthropic',
-  //   target: '_blank',
-  //   to: `https://claude.ai/new?q=${encodeURIComponent(`Read ${mdPath.value} so I can ask questions about it.`)}`
-  // }
 ]
 
 async function copyPage() {
-  copy(await $fetch<string>(`/mb/raw${route.path}.md`))
+  try {
+    const content = await $fetch<string>(mdPath)
+    copy(content)
+    toast.add({
+      title: 'התוכן הועתק',
+      icon: 'i-lucide-check-circle'
+    })
+  } catch {
+    toast.add({
+      title: 'שגיאה בטעינת התוכן',
+      icon: 'i-lucide-alert-circle',
+      color: 'error'
+    })
+  }
 }
 </script>
 

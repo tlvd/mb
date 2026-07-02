@@ -2,6 +2,7 @@
 export default defineNuxtConfig({
   app: {
     baseURL: '/mb/',
+    // baseURL: '/',
     // baseURL: process.env.NODE_ENV === 'production' 
     //   ? '/mb/'  // Replace with your repository name
     //   : '/',
@@ -54,7 +55,7 @@ export default defineNuxtConfig({
   fonts: {
     provider: 'local',
     families: [
-      { name: 'Noto Sans Hebrew', weights: [400, 700], global: true },
+      { name: 'Noto Sans Hebrew', weights: ['400 700'], global: true, src: '/fonts/NotoSansHebrew.ttf' },
     ],
   },
   
