@@ -1,0 +1,138 @@
+אני רוצה ליצור מסמך llms.txt שיעזור לכל משתמש לתת הוראות מדויקות לבינה מלאכותית בנוגע לאופן כתיבת דף פנייה חדש שמתאים למבנה הדף הקיים בצורה כזו שהבינה שואלת שואלת, המשתמש עונה, עד שהפניה גמורה ומתאימה לפורמט של פנייה (yml. + markdown + components) כמו בפניה לדוגמה עם דגש על פורמט, פיסוק ורווחים שווים למקור.
+
+
+טכנולוגיות בשימוש:
+
+- Nuxt 4 - https://nuxt.com/llms-full.txt
+- Nuxt UI - https://ui.nuxt.com/llms-full.txt
+- Nuxt Content - https://content.nuxt.com/llms-full.txt
+- Docs template - https://docs-template.nuxt.dev/llms-full.txt
+
+הנה סכמת הפניה בקובץ content.config.ts:
+
+ inquiries: defineCollection({
+      type: 'page',
+      source: '1.inquiries/**/*',
+      schema: z.object({
+        draft: z.boolean().optional(),
+        iid: z.string().optional(),
+        idate: z.string().optional(),
+        icon: z.string().optional(),
+        office: z.string().optional(),
+        author: z.string().optional(),
+        poster: z.string().optional(),
+        posterTitle: z.string().optional(),
+        status: z.string().optional(),
+        gallery: z.array(z.object({
+          url: z.string(),
+          title: z.string()
+        })).optional(),
+        events: z.array(z.object({
+          date: z.string(),
+          title: z.string(),
+          description: z.string(),
+          icon: z.string(),
+          value: z.string()
+        })).optional(),
+        links: z.array(z.object({
+          label: z.string(),
+          icon: z.string(),
+          to: z.string(),
+          target: z.string().optional()
+        })).optional(),
+        involved: z.array(z.string()).optional()
+      })
+
+
+
+פורמט לדוגמה:
+
+---
+title: כותרת פניה
+description: תבנית ליצירת פניה כולל כותרת, תיאור, משרד, תאריך, סטטוס פניה, עורך פניה, תמונה ראשית לפניה ועוד...
+office: עיריית נתניה
+navigation:
+  icon: i-lucide-zap
+iid: '20250101-01'
+idate: '01-01-2025'
+status: פתוח
+author: לקס
+poster: 
+posterTitle: תמונה
+darft: true
+#involved:
+#  - FIRSTL01
+
+---
+
+## רקע
+
+[למלא פה רקע ןתיאור הפניה]
+
+
+---
+
+## תיעודים
+
+::badge{color="primary"}
+**וידאו**
+::
+
+::u-page-card{class="my-6 p-4"}
+:::you-tube{id=""}
+:::
+::
+
+:::badge{color="primary"}
+**תמונות**
+:::
+
+::gallery
+---
+images:
+  - title: "תמונה 1"
+    src: ""
+  - title: "תמונה 2"
+    src: ""
+  - title: "תמונה 3"
+    src: ""
+---
+::
+---
+
+## לוג
+
+::log
+---
+events:
+  - date: 'ינואר 1, 2025'
+    title: 'המקרה'
+    description: 'מועד התקרית ותיעודה'
+    icon: 'i-lucide-zap'
+  - date: 'ינואר 8, 2025'
+    title: 'שם עדכון'
+    description: 'תיאור עדכון לוג זמנים'
+    icon: 'i-lucide-upload'
+    value: 'latest'
+  - date: 'טרם נקבע'
+    title: 'שם עדכון'
+    description: 'תיאור עדכון לוג זמנים'
+    icon: 'i-lucide-file-text'
+---
+::
+
+---
+
+## עדכונים והישגים
+
+::alert-updates
+::
+
+---
+
+## תגובות
+
+::alert-feedback
+::
+
+
